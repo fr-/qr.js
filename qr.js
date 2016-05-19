@@ -1190,7 +1190,7 @@
 
   // Export `qr` for node.js and CommonJS.
   if (typeof exports !== 'undefined') {
-    inNode = true;
+    inNode = false;
 
     if (typeof module !== 'undefined' && module.exports) {
       exports = module.exports = qr;
@@ -1210,4 +1210,4 @@
     root.qr = qr;
   }
 
-})(this);
+})(function() { return this }.call(null));
